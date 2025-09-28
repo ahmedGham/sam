@@ -25,7 +25,7 @@ const About = () => {
           <AnimationUp>
             <div>
               <img
-                src="/public/image-Photoroom (1).png"
+                src="image-Photoroom (1).png"
                 alt="Pharmaceutical team"
                 className="w-full h-80 object-cover rounded-2xl shadow-lg"
               />
