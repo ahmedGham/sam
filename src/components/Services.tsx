@@ -122,7 +122,7 @@ const Services = () => {
             const delay = 1 / (index + 1);
             console.log(delay);
             return (
-              <AnimationUp transition={{ delay: delay }}>
+              <AnimationUp >
                 <div
                   key={index}
                   className="bg-gray-50 p-8 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 group"
@@ -159,11 +159,12 @@ const Services = () => {
           <motion.div
             variants={containerVariants}
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            ref={ref}
           >
             {customerStats.map((stat, index) => (
               <motion.div
                 key={index}
-                ref={ref}
+                
                 variants={itemVariants}
                 whileHover={{ 
                   scale: 1.05,

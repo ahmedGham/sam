@@ -226,14 +226,13 @@ const WhyUs = () => {
         {/* Timeline */}
         <div className="relative h-full">
           {/* Timeline line */}
-          <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gray-200"></div>
+          {/* <div className="absolute left-8 md:left-1/2 transform md:-translate-x-px top-0 bottom-0 w-0.5 bg-gray-200"></div>
           <svg
-            width="100%"
-            height="100%"
             viewBox="-100 80 200 200"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            className="absolute top-0"
+            preserveAspectRatio="none"
+            className="absolute top-0 left-0 w-full h-full"
           >
             <defs>
               <linearGradient
@@ -257,20 +256,20 @@ const WhyUs = () => {
               fill="transparent"
               style={{ pathLength }}
             />
-          </svg>
+          </svg> */}
 
           {/* Timeline items */}
           {/* <div className="space-y-10"> */}
-          <div className="space-y-10">
+          <div className="space-y-10 ">
             {reasons.map((reason, index) => (
               <div
                 key={index}
-                className={`relative flex items-center ${
+                className={`relative flex items-center justify-center md:justify-normal ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#0054a6] rounded-full border-4 border-white shadow-lg z-10"></div>
+                {/* <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#0054a6] rounded-full border-4 border-white shadow-lg z-10"></div> */}
 
                 <motion.div
                   key={index}
@@ -281,7 +280,7 @@ const WhyUs = () => {
                     scale: 1.02,
                     transition: { duration: 0.2 },
                   }}
-                  className="w-[45%] relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
+                  className="md:w-[45%] w-[85%] relative bg-gradient-to-br from-gray-50 to-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden"
                 >
                   {/* Background decoration */}
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#0054a6]/5 to-[#00adee]/5 rounded-full -translate-y-16 translate-x-16 group-hover:scale-150 transition-transform duration-500"></div>
@@ -329,10 +328,10 @@ const WhyUs = () => {
             </AnimationUp>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" ref={ref}>
             {stats.map((stat, index) => (
               <AnimationUp key={index}>
-                <div className="text-center group" ref={ref}>
+                <div className="text-center group" >
                   <div className="w-20 h-20 bg-gradient-to-br from-[#0054a6] to-[#00adee] rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <div className="text-white">{stat.icon}</div>
                   </div>
